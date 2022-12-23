@@ -1,6 +1,5 @@
 class Solution {
-    public int similarPairs(String[] words) {
-        
+    public int similarPairs(String[] words) { 
         int count=0;
 
         for(int i=0;i<words.length-1;i++){
