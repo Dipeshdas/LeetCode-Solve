@@ -6,4 +6,4 @@ to Optimal Solution.
 •You can easily Understand the code written over there 
 
 
-•All the code file is in Java.
+•All codes written in JAVA.
