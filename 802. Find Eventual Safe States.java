@@ -37,4 +37,44 @@ class Solution {
         pathVisit[i]=0;
         return false;
     }
+    
+    //TOPOLOGICAL SORT
+    public List<Integer> eventualSafeNodes(int[][] graph) {
+        int n=graph.length;
+        ArrayList<ArrayList<Integer>>adjRev=new ArrayList<>();
+        List<Integer>ans=new ArrayList<>();
+        int indegree[]=new int[n];
+
+        for(int i=0;i<n;i++){
+            adjRev.add(new ArrayList<>());
+        }
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<graph[i].length;j++){
+                adjRev.get(graph[i][j]).add(i);
+                indegree[i]++;
+            }
+        }
+
+        Queue<Integer>q=new LinkedList<>();
+        for(int i=0;i<n;i++){
+            if(indegree[i]==0){
+                q.add(i);
+            }
+        }
+
+        while(!q.isEmpty()){
+            int node=q.poll();
+            ans.add(node);
+
+            for(int e:adjRev.get(node)){
+                indegree[e]--;
+                if(indegree[e]==0) q.add(e);
+            }
+        }
+        
+        Collections.sort(ans);
+        return ans;
+
+    }
 }
