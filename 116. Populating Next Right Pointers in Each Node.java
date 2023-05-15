@@ -36,7 +36,6 @@ class Solution {
             if(cur==null && q.isEmpty()){
                 return root;
             }
-
             if(cur==null){
                 q.add(null);
             }
