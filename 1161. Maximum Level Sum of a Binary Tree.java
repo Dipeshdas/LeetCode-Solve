@@ -46,8 +46,7 @@ class Solution {
                 ind=i+1;
                 max=Math.max(sum,max);
             }
-        }
-        
+        }    
         return ind;
     }
 }
