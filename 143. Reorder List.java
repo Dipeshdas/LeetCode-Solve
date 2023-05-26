@@ -21,7 +21,6 @@ class Solution {
         }
         return prev;
     }
-
     public void reorderList(ListNode head) {
         ListNode slow=head;
         ListNode fast=head;
