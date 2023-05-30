@@ -11,6 +11,7 @@ class Solution {
             }
         }
     }
+
     public void solve(char[][] board) {
         int n=board.length;
         int m=board[0].length;
