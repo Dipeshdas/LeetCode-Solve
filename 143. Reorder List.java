@@ -29,7 +29,6 @@ class Solution {
             slow=slow.next;
             fast=fast.next.next;
         }
-
         ListNode first=head;
         ListNode second=reverse(slow.next);
         slow.next=null;
