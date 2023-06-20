@@ -14,9 +14,6 @@ class Solution {
     public int shortestPathBinaryMatrix(int[][] grid) {
         if(grid[0][0]!=0) return -1;
 
-        
-        
-
         int n=grid.length;
         int m=grid[0].length;
 
