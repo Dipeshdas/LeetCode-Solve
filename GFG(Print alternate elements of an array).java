@@ -25,8 +25,6 @@ class Alternate
     }
 }
 // } Driver Code Ends
-
-
 //User function Template for Java
 
 // arr[] is the array 
