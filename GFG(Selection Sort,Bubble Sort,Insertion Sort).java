@@ -1,0 +1,199 @@
+
+//SELECTION SORT
+
+//{ Driver Code Starts
+import java.util.*;
+
+class GFG
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t>0)
+		{
+			int n = sc.nextInt();
+			int arr[] = new int[n]; 
+			for(int i=0;i<n;i++)
+			{
+				arr[i] = sc.nextInt();
+			}
+		
+			Solution obj = new Solution();
+			obj.selectionSort(arr, n);
+			
+			for(int i=0;i<n;i++)
+		    	System.out.print(arr[i]+" ");
+		    System.out.println();
+			t--;
+		}
+		
+	}
+}
+
+// } Driver Code Ends
+
+
+class Solution
+{
+	int  select(int arr[], int i)
+	{
+	    int mini=i;
+        for(int j=i+1;j<arr.length;j++){
+            if(arr[j]<arr[mini]){
+                mini=j;
+            }
+        }
+        return  mini;
+	}
+	
+	void selectionSort(int arr[], int n)
+	{
+	    for(int i=0;i<n;i++){
+	        int mini=select(arr,i);
+	        int temp=arr[mini];
+	        arr[mini]=arr[i];
+	        arr[i]=temp;
+	    }
+	}
+}
+
+////BUBBLE SORT------------
+//{ Driver Code Starts
+//Initial Template for Java
+
+import java.util.*;
+import java.io.*;
+
+
+// } Driver Code Ends
+//User function Template for Java
+
+class Solution
+{
+    //Function to sort the array using bubble sort algorithm.
+	public static void bubbleSort(int arr[], int n)
+    {
+        for(int i=n-1;i>=0;i--){
+            boolean swap=false;
+            for(int j=0;j<i;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                    swap=true;
+                }
+            }
+            if(!swap){
+                break;
+            }
+        }
+    }
+}
+
+//{ Driver Code Starts.
+
+class Sorting
+{
+    //method to print the Elements of the array
+    static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+	public static void main(String args[])
+	{
+	    //taking input using Scanner class
+		Scanner sc = new Scanner(System.in);
+		
+		//taking total testcases
+		int t = sc.nextInt();
+		while(t>0)
+		{
+		    //taking total elements
+			int n = sc.nextInt();
+			
+			//creating a new array of length n
+			int arr[] = new int[n];
+			
+			//inserting elements to the array
+			for(int i=0;i<n;i++)
+			{
+				arr[i] = sc.nextInt(); 
+			}
+			
+			
+			//calling bubbleSort() method
+			new Solution().bubbleSort(arr,n);
+			
+			//calling printArray() method
+			printArray(arr);
+			
+		t--;	
+		}
+	}
+
+}
+// } Driver Code Ends
+
+//// INSERTION SORT--------------
+//{ Driver Code Starts
+import java.util.*;
+import java.lang.Math;
+
+class Sorting
+{
+	
+	static void printArray(int arr[],int size)
+	{
+		int i;
+		for(i=0;i<size;i++)
+		System.out.print(arr[i]+" ");
+	    System.out.println();
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int t= sc.nextInt();
+		while(t>0)
+		{
+			int n = sc.nextInt();
+			int a[] = new int[n];
+		
+			for(int i=0;i<n;i++)
+			a[i]= sc.nextInt();
+			
+			 new Solution().insertionSort(a,n);
+			 printArray(a,n);
+			
+		t--;
+		}
+		
+	}
+}
+// } Driver Code Ends
+
+
+class Solution
+{
+  static void insert(int arr[],int i)
+  {
+       // Your code here
+  }
+  //Function to sort the array using insertion sort algorithm.
+  public void insertionSort(int arr[], int n)
+  {
+      for(int i=0;i<n;i++){
+          int j = i;
+            while (j > 0 && arr[j - 1] > arr[j]) {
+                int temp = arr[j - 1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
+                j--;
+            }
+      }
+  }
+}
