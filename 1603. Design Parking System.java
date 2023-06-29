@@ -4,8 +4,7 @@ class ParkingSystem {
         slot[0]=big;
         slot[1]=medium;
         slot[2]=small;
-    }
-    
+    } 
     public boolean addCar(int carType) {
         if(carType==1){
             if(slot[0]==0){
