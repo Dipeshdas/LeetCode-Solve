@@ -17,7 +17,6 @@ class Solution {
             }
 
         }
-
         while(!st.isEmpty()){
             ch[st.pop()]='@';
         }
