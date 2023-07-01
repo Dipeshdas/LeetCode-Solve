@@ -9,7 +9,6 @@ class Solution {
             if(manager[i]!=-1)
                 adj.get(manager[i]).add(i);
         }
-
         int ans[]={0};
         int maxi[]={0};
         dfs(headID,adj,informTime,ans,maxi);
