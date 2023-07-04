@@ -29,7 +29,6 @@ class Solution {
 
         q.add(root);
         q.add(null);
-
         while(!q.isEmpty()){
             Node cur=q.poll();
 
