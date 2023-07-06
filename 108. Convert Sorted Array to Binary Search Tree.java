@@ -27,5 +27,6 @@ class Solution {
         root.right=BT(nums,mid+1,right);
         return root;
         
+        
     }
 }
