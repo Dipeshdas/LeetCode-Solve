@@ -6,7 +6,6 @@ class Tuple{
         this.col=col;
     }
 }
-
 class Solution {
     public int closedIsland(int[][] grid) {
         int n=grid.length;
