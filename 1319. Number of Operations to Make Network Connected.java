@@ -8,7 +8,6 @@ class DisjointSet{
             parent.add(i);
         }
     }
-
     public int findUParent(int node){
         if(node==parent.get(node)){
             return node;
