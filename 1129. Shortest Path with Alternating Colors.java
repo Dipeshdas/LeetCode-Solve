@@ -17,7 +17,6 @@ class Solution {
             adjRed.add(new ArrayList<>());
             adjBlue.add(new ArrayList<>());
         }
-
         for(int i=0;i<redEdges.length;i++){
             adjRed.get(redEdges[i][0]).add(redEdges[i][1]);
         }
