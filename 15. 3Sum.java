@@ -1,34 +1,66 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
+       
+        // Set<List<Integer>>set=new HashSet<>();
+        // for(int i=0;i<nums.length;i++){
+        //     Set<Integer>set2=new HashSet<>();
+        //     for(int j=i+1;j<nums.length;j++){
 
-        List<List<Integer>>ans =new ArrayList<>();
-        for(int i=0;i<nums.length-2;i++){
-            if(i==0 ||(i>0 && nums[i]!=nums[i-1])){
+        //         int third=-(nums[i]+nums[j]);
 
-                int l=i+1,h=nums.length-1;
-                int sum=0-nums[i]; //b+c=-a where b+a=sum;
+        //         if(set2.contains(third)){
+        //             List<Integer> temp = Arrays.asList(nums[i], nums[j], third);
+        //             Collections.sort(temp);
+        //             set.add(temp);
 
-                while(l<h){
-                    if(nums[l]+nums[h]==sum){
+        //         }
+        //         set2.add(nums[j]);
+        //     }
+        // }
+        // List<List<Integer>>ans=new ArrayList<>(set);
+        // return ans;
 
-                        ans.add(Arrays.asList(nums[i],nums[l],nums[h]));
 
-                        while(l<h && nums[l]==nums[l+1]) l++;
-                        while(l<h && nums[h]==nums[h-1]) h--;
+       List<List<Integer>>ans=new ArrayList<>();
+       int n=nums.length;
+		Arrays.sort(nums);
 
-                        l++;
-                        h--;
-                    }
+		for(int i=0;i<n;i++){
 
-                    else if(nums[l]+nums[h] < sum) l++;
+			if(i!=0 && nums[i]==nums[i-1]) continue;
+			
+			int j=i+1;
+			int k=n-1;
 
-                    else h--;          
-                }
+			while(j < k){
 
-            }
-        }
-        return ans;
+				int sum=nums[i]+nums[j]+nums[k];
+
+				if(sum < 0){
+					j++;
+					
+				}
+
+				else if(sum > 0){
+					k--;
+				}
+
+				else{
+					List<Integer>temp=new ArrayList<>();
+					temp.add(nums[i]);
+					temp.add(nums[j]);
+					temp.add(nums[k]);
+					ans.add(temp);
+					j++;
+					k--;
+
+					while(j < k && nums[j]==nums[j-1]) j++;
+
+					while(j < k && nums[k]==nums[k+1]) k--;
+				}
+			}
+		}
+		return ans;
 
     }
 }
