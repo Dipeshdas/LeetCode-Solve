@@ -10,7 +10,6 @@ class LRUCache {
         tail.prev=head;
 
     }
-    
     public int get(int key) {
         if(map.containsKey(key)){
             Node ans=map.get(key);
